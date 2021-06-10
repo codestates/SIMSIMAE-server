@@ -1,14 +1,5 @@
 ---
 name: Issue Task Card
-about: Use template to raise issue
-title: "[Task]"
-labels: ''
-assignees: ''
-
----
-
----
-name: Issue Task Card
 about: Issue Task Card
 title: "[Task] 이슈카드 제목 설정하기"
 labels: ''
@@ -18,17 +9,22 @@ assignees: ''
 
 ### ISSUE
 
-- Group: server, sr
+- Group: client, server, sr
 
 - Type: bug, feature, delete
 
 - Detail: fix actions from client redux
 
 ### TODO
+ 
 
 - [ ] Job1
 
+ 
+
 - [ ] Job2
+
+ 
 
 - [ ] Job3
 
@@ -44,5 +40,6 @@ assignees: ''
 
 ### Labels
 Estimated time:  `E: 1h`
-Group : `server`
+Group : `client`, `server`
 Sprint: `Sprint__NUMBER__`
+Urgency: `High`, `Middle`, `Low`
