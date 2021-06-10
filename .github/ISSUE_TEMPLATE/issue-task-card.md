@@ -1,5 +1,5 @@
 ---
-name: issue-task-card
+name: Issue Task Card
 about: Use template to raise issue
 title: "[Task]"
 labels: ''
