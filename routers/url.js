@@ -14,6 +14,9 @@ router.post('/dislike', urlController.dislike);
 // get /url/비회원
 router.get('/', urlController.Url);
 
+//get /url/회원
+router.get('/:id', urlController.userUrl);
+
 
 module.exports = router;
 
