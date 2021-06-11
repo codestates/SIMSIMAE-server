@@ -7,6 +7,8 @@ const { Url } = require('./models');
 
 const app = express();
 const port = 80;
+const usersRouter = require ('./routers/user');
+const urlRouter = require ('./routers/url');
 
 app.use(cors({
     origin: true,
@@ -23,12 +25,12 @@ app.use(express.urlencoded({extended: false}));
 app.get('/', async (req, res) => {
     const url = await Url.findOne({where: {id:1}});
     console.log(url.url);
-    res.send(url);
+    res.send(url.url);
 })
 
-//라우터 연결
-//app.use('/user',)
-//app.use('/url',)
+// 라우터 연결
+app.use('/user', usersRouter)
+app.use('/url', urlRouter)
 
 app.listen(port, () => {
     console.log(`server listening on ${port}`);
