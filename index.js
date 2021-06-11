@@ -21,7 +21,8 @@ app.use(express.urlencoded({extended: false}));
 
 //테스트용
 app.get('/', async (req, res) => {
-    const url = await Url.findOne();
+    const url = await Url.findOne({where: {id:1}});
+    console.log(url.url);
     res.send(url);
 })
 
