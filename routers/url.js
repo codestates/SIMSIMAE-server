@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-
 const { urlController } = require('../controller');
-
 
 // post /url/like
 router.post('/like', urlController.like);
