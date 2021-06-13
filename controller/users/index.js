@@ -5,7 +5,6 @@ module.exports = {
     signUp: require('./signUp'),
     drop: require('./drop'),
     update: require('./update'),
-    accessTokenRequest: require('./accessTokenRequest'),
     refreshTokenRequest: require('./refreshTokenRequest'),
   };
   

@@ -21,9 +21,6 @@ router.post('/drop', usersController.drop);
 // get /user/info
 router.get('/info', usersController.info);
 
-// get /user/accesstokenrequest
-router.get('/accesstokenrequest', usersController.accessTokenRequest);
-
 // get /user/refreshtokenrequest
 router.get('/refreshtokenrequest', usersController.refreshTokenRequest);
 
