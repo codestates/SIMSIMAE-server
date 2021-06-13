@@ -10,13 +10,12 @@ module.exports = async (req,res) => {
     })
    
     if(!dropUser.password) {
-        res.status(404).send('비밀번호가 일치하지 않습니다.')
+        res.status(404).send('not matched password')
     } else {
         await User.update({status : false}, {where : {id : dropUser.id }})
-        res.status(200).send('회원 탈퇴가 완료되었습니다.' )
+        res.status(200).send('complete to drop the user' )
     }
-
-    }
+}
 
 
 //유저 정보 비활성화 

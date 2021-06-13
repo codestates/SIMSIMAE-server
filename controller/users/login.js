@@ -9,21 +9,18 @@ module.exports = async (req, res) => {
       password: req.body.password
     }
   });
-
   
   if (!userInfo) {
     // 일치하는 유저가 없을 경우
-    res.status(401).json({ 
-      message: 'not authorized' 
-  });
+    res.status(401).send('not authorized');
   } else {
     // 일치하는 유저가 있을 경우
     // access token, refresh token 두가지를 생성
-    const { id, email, name, phone, gender, age, location, createdAt } = userInfo;
-    const accessToken = jwt.sign({ id, email, name, phone, gender, age, location, createdAt }, process.env.ACCESS_SECRET, {
+    const { id, email, name, phone, gender, age, location, created_at } = userInfo;
+    const accessToken = jwt.sign({ id, email, name, phone, gender, age, location, created_at }, process.env.ACCESS_SECRET, {
       expiresIn: '1h',
     });
-    const refreshToken = jwt.sign({ id, email, name, phone, gender, age, location, createdAt  }, process.env.REFRESH_SECRET, {
+    const refreshToken = jwt.sign({ id, email, name, phone, gender, age, location, created_at  }, process.env.REFRESH_SECRET, {
       expiresIn: '10h',
     });
     // 생성된 refresh token을 쿠키에 담아줍니다
@@ -32,7 +29,7 @@ module.exports = async (req, res) => {
       secure: true, 
       httpOnly: true
     });
-    res.status(200).json({
+    res.status(200).send({
       data: {
         accessToken
       }, 

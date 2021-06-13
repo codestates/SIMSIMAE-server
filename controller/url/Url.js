@@ -9,20 +9,8 @@ module.exports = async (req, res) => {
     const url = await Url.findOne({where :randomId , attributes:['url']});
     // console.log(typeof(url.url));
 
+    //무작위 랜덤 QR code 
     res.send(`<img src='https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=${url.url}' />`)
-    
-    /*
-    axios
-    .get(
-      `https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=${url.url}`,
-      { accept: 'image/png'}  //image/png 형식으로만 응답을 받겠다.
-    )
-    .then(response => {
-      console.log(response.data) 
-      //res.set('Content-Type', 'image/png')    
-      res.send(response.data);
-    }).catch(err => err )
-    */
 }
 
 
