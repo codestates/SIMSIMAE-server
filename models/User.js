@@ -35,12 +35,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(10),
       allowNull: true
     },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
+    },
     created_at: {
       type: DataTypes.DATE,
       allowNull: true
     },
-    status: {
-      type: DataTypes.BOOLEAN,
+    updated_at: {
+      type: DataTypes.DATE,
       allowNull: true
     },
     social_id: {
