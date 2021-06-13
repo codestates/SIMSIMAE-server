@@ -19,7 +19,6 @@
   "homepage": "https://github.com/narayoo/SIMSIMAE-server#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "circular-json": "^0.5.9",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",

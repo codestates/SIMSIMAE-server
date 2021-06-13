@@ -3,12 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const { Url } = require('./models');
+const usersRouter = require('./routers/user');
+const urlRouter = require('./routers/url');
 
 const app = express();
 const port = 80;
-const usersRouter = require ('./routers/user');
-const urlRouter = require ('./routers/url');
 
 app.use(cors({
     origin: true,
@@ -21,14 +20,12 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-//테스트용
+//테스트용!!
 app.get('/', async (req, res) => {
-    const url = await Url.findOne({where: {id:1}});
-    console.log(url.url);
-    res.send(url.url);
+    res.send('Hello!!')
 })
 
-// 라우터 연결
+//라우터 연결
 app.use('/user', usersRouter)
 app.use('/url', urlRouter)
 
