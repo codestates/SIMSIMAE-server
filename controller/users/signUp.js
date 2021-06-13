@@ -8,7 +8,7 @@ module.exports = async (req,res) => {
         password,
         name,
         phone
-      })
+    })
     const conflictMail = await User.findOne({ where: { email }})
      
     if(createUser){
@@ -18,7 +18,6 @@ module.exports = async (req,res) => {
     }else{
         err => err
     }
-
 
 }  
 
