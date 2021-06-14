@@ -10,9 +10,13 @@ module.exports = async (req, res) => {
     // console.log(typeof(url.url));
 
     //무작위 랜덤 QR code 
+<<<<<<< HEAD
+    res.send('https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=${url.url}');
+=======
 
     res.status(200).send(`https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=${url.url}`)
 
+>>>>>>> 705c36445f84d6034de9336b6cd979e8dbfac980
 }
 
 
