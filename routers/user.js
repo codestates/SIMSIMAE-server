@@ -12,8 +12,11 @@ router.post('/logout', usersController.logout);
 // post /user/signup
 router.post('/signup', usersController.signUp);
 
-// post /user/update
-router.post('/update', usersController.update);
+// post /user/update category
+router.post('/updatecategory', usersController.updateCategory);
+
+// post /user/update like qr
+router.post('/updatelikeqr', usersController.updateLikeQr)
 
 // post /user/drop
 router.post('/drop', usersController.drop);
