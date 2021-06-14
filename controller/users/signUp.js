@@ -1,3 +1,4 @@
+const { restart } = require('nodemon');
 const { User } = require('../../models');
 
 
@@ -13,17 +14,11 @@ module.exports = async (req,res) => {
         created_at : new Date(),
         updated_at : new Date()
     })
-
-    const userLikes = await User.findOrCreate()
-     
     if(createUser){
          res.status(201).send({email, name, phone}) 
-     }else{
-        err => err
+    } else{
+        res.status(404).send('sign-up error')
     }
-
-
-
 }  
 
 
