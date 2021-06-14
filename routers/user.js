@@ -18,6 +18,9 @@ router.post('/update', usersController.update);
 // post /user/drop
 router.post('/drop', usersController.drop);
 
+// post /user/doublecheck
+router.post('/conflictemail', usersController.conflictEmail);
+
 // get /user/info
 router.get('/info', usersController.info);
 

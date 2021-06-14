@@ -6,5 +6,6 @@ module.exports = {
     drop: require('./drop'),
     update: require('./update'),
     refreshTokenRequest: require('./refreshTokenRequest'),
-  };
+    conflictEmail: require('./conflictEmail')
+};
   
