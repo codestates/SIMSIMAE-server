@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    cotegory_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
         name: "Url_FK",
         using: "BTREE",
         fields: [
-          { name: "cotegory_id" },
+          { name: "category_id" },
         ]
       },
     ]
