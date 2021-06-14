@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
     //무작위 랜덤 QR code 
 
-    res.status(200).send(`https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl=${url.url}`)
+    res.status(200).send(`https://chart.apis.google.com/chart?cht=qr&chs=250x250&chl=${url.url}`)
 
 }
 
