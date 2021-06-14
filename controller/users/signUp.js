@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 
 module.exports = async (req,res) => {
+    //받는거 locaion, age, 
     const { email, password, name, phone } = req.body
     console.log(req.body)
     //유저 필수 항목 정보만 DB에 저장
@@ -17,7 +18,7 @@ module.exports = async (req,res) => {
     })
      
     if(createUser){
-         res.status(201).send({email, name, phone}) 
+        res.status(201).send({email, name, phone}) 
     } else{
         res.status(404).send('sign-up error')
     }
