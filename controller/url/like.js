@@ -15,5 +15,5 @@ module.exports = async (req, res) => {
         url_id: urlId.dataValues.id,
         user_id: userId    
     })
-    res.send('success');
+    res.status(200).send('success');
 }
