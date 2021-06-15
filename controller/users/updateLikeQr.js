@@ -4,7 +4,7 @@ const { Likes} = require('../../models');
 module.exports = async (req, res) => {
     const { id, url } = req.body
 
-    if(!url){
+    if(!url) {
         res.status(400).send('올바른 요청이 아닙니다.')
     } else {
         const findUrlId = await Url.findOne({
@@ -16,9 +16,8 @@ module.exports = async (req, res) => {
         }) 
     }
     
-      res.status(200).send('요청이 올바르게 완료되었습니다.')
-
-    }
+    res.status(200).send('요청이 올바르게 완료되었습니다.')
+}
 
     
 
