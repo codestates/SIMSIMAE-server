@@ -13,7 +13,7 @@ router.post('/dislike', urlController.dislike);
 router.get('/', urlController.Url);
 
 //get /url/회원
-router.get('/:id', urlController.userUrl);
+router.get('/userurl', urlController.userUrl);
 
 
 module.exports = router;

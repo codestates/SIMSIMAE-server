@@ -4,7 +4,8 @@ module.exports = {
     info: require('./info'),
     signUp: require('./signUp'),
     drop: require('./drop'),
-    update: require('./update'),
+    updateCategory: require('./updateCategory'),
+    updateLikeQr: require('./updateLikeQr'),
     refreshTokenRequest: require('./refreshTokenRequest'),
     conflictEmail: require('./conflictEmail')
 };
