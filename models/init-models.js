@@ -18,8 +18,8 @@ function initModels(sequelize) {
   var User = _User(sequelize, DataTypes);
   var user_category = _user_category(sequelize, DataTypes);
 
-  Url.belongsTo(Category, { as: "cotegory", foreignKey: "cotegory_id"});
-  Category.hasMany(Url, { as: "Urls", foreignKey: "cotegory_id"});
+  Url.belongsTo(Category, { as: "category", foreignKey: "category_id"});
+  Category.hasMany(Url, { as: "Urls", foreignKey: "category_id"});
   user_category.belongsTo(Category, { as: "category", foreignKey: "category_id"});
   Category.hasMany(user_category, { as: "user_categories", foreignKey: "category_id"});
   User.belongsTo(Social, { as: "social", foreignKey: "social_id"});

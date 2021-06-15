@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'User',  
+        model: 'User',
         key: 'id'
       }
     }
@@ -28,6 +28,14 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'Likes',
     timestamps: false,
     indexes: [
+      {
+        name: "PRIMARY",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "id" },
+        ]
+      },
       {
         name: "Likes_FK",
         using: "BTREE",
