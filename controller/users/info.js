@@ -7,14 +7,14 @@ module.exports = async (req, res) => {
   console.log('authorization', authorization)
   if(!authorization) {
       //header authoriaztion에 토큰이 담겨있지 않을 때
-      res.status(403).send('invalid access token');
+      res.status(404).send('invalid access token');
   } else {
     const token = authorization.split(' ')[1]
     //token 디코딩
     const data = jwt.verify(token, process.env.ACCESS_SECRET, (err, decoded) => {
       if(err) {
           //토큰을 받아 왔지만 잘못된 토큰인 경우
-          res.status(403).send('invalid access token')
+          res.status(404).send('invalid access token')
       } else {
           return decoded
       }
