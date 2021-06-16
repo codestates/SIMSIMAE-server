@@ -7,6 +7,6 @@ module.exports = {
     updateCategory: require('./updateCategory'),
     updateLikeQr: require('./updateLikeQr'),
     refreshTokenRequest: require('./refreshTokenRequest'),
-    conflictEmail: require('./conflictEmail')
+    conflictEmail: require('./conflictEmail'),
 };
   

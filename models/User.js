@@ -13,7 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING(10),
-      allowNull: false
     },
     name: {
       type: DataTypes.STRING(30),
@@ -21,7 +20,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     phone: {
       type: DataTypes.CHAR(11),
-      allowNull: false
     },
     gender: {
       type: DataTypes.CHAR(1),
