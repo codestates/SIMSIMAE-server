@@ -5,17 +5,15 @@ const { Url } = require('../../models');
 const { Likes } = require('../../models');
 const jwt = require('jsonwebtoken');
 
-
 /*
-const initModels = require('../../models/init-models');
-const models = initModels
+const  initModels  = require('../../models/init-models')
+const models = initModels(sequelize)
 const User = models.User
 console.log(User)
 const Category = models.Category
 const user_category = models.user_category
 const Likes = models.Likes
 */
-
 
 module.exports = async (req, res) => {
   //req 헤더의 authorization에 access token이 담겨온다.
@@ -46,7 +44,6 @@ module.exports = async (req, res) => {
     } else {
         delete userInfo.dataValues.password
 
-      
         //유저 id를 가지고 유저가 저장한 category id 찾는다.
         //category id로 category name을 찾는다.
         const findCategoryId = await user_category.findAll({
@@ -77,7 +74,7 @@ module.exports = async (req, res) => {
         const urlIdArr = findUrlId.map(el => {
           return el.dataValues.url_id
         })
-        
+        d 
         const findUrlName = await Url.findAll({
           where: {id: urlIdArr},
           attributes: ['url']
@@ -87,7 +84,7 @@ module.exports = async (req, res) => {
         const urlArr = findUrlName.map(el => {
           return el.dataValues.url
         })
-
+        
         res.send({
           userInfo: userInfo.dataValues,
           favorite: categoryArr,
@@ -112,7 +109,7 @@ module.exports = async (req, res) => {
           ]        
         })
         console.log('favorite', favoriteCate);
-
+    
         const likeUrl = await Url.findAll({
           include: [
             {
@@ -122,7 +119,8 @@ module.exports = async (req, res) => {
           ]
         })
         console.log('likeUrl', likeUrl)
-        */
+      */  
+        
 
 
         

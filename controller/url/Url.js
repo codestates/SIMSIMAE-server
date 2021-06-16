@@ -1,7 +1,4 @@
 const { Url } = require('../../models');
-const jwt = require('jsonwebtoken');
-const axios = require('axios');
-const { response } = require('express');
 
 
 module.exports = async (req, res) => {
@@ -10,9 +7,7 @@ module.exports = async (req, res) => {
     // console.log(typeof(url.url));
 
     //무작위 랜덤 QR code 
-
     res.status(200).send(`https://chart.apis.google.com/chart?cht=qr&chs=250x250&chl=${url.url}`)
-
 }
 
 
