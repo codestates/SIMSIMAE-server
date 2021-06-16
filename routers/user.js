@@ -30,4 +30,8 @@ router.get('/info', usersController.info);
 // get /user/refreshtokenrequest
 router.get('/refreshtokenrequest', usersController.refreshTokenRequest);
 
+// post /user/googlelogin 
+
+router.post('/googlelogin', usersController.googleLogin);
+
 module.exports = router; 
