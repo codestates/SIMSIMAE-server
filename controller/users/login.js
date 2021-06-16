@@ -9,7 +9,6 @@ module.exports = async (req, res) => {
       password: req.body.password
     }
   });
-  
   if (!userInfo) {
     // 일치하는 유저가 없을 경우
     res.status(401).send('not authorized');
