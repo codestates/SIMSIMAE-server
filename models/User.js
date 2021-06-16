@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING(10),
+      allowNull: true
     },
     name: {
       type: DataTypes.STRING(30),
@@ -20,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     phone: {
       type: DataTypes.CHAR(11),
+      allowNull: true
     },
     gender: {
       type: DataTypes.CHAR(1),
@@ -44,14 +46,6 @@ module.exports = function(sequelize, DataTypes) {
     updated_at: {
       type: DataTypes.DATE,
       allowNull: true
-    },
-    social_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'Social',
-        key: 'id'
-      }
     }
   }, {
     sequelize,
@@ -64,13 +58,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id" },
-        ]
-      },
-      {
-        name: "User_FK",
-        using: "BTREE",
-        fields: [
-          { name: "social_id" },
         ]
       },
     ]
