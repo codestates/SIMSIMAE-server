@@ -8,6 +8,5 @@ module.exports = {
     updateLikeQr: require('./updateLikeQr'),
     refreshTokenRequest: require('./refreshTokenRequest'),
     conflictEmail: require('./conflictEmail'),
-    googleLogin : require('./googleLogin')
 };
   
