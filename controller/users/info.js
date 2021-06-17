@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
         const urlIdArr = findUrlId.map(el => {
           return el.dataValues.url_id
         })
-        d 
+
         const findUrlName = await Url.findAll({
           where: {id: urlIdArr},
           attributes: ['url']

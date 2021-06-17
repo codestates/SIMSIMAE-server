@@ -3,15 +3,21 @@ const jwt = require('jsonwebtoken');
 
 
 module.exports = async (req, res) => {
+  const { email, password } = req.body
+
   const userInfo = await User.findOne({
     where: { 
-      email: req.body.email,
-      password: req.body.password
+      email: email,
+      password: password,
     }
   });
+
+  console.log('userInfo', userInfo)
   if (!userInfo) {
     // 일치하는 유저가 없을 경우
     res.status(401).send('not authorized');
+  } else if(!userInfo.status) {
+    res.status(404).send('탈퇴한 유저입니다.');
   } else {
     // 일치하는 유저가 있을 경우
     // access token, refresh token 두가지를 생성
