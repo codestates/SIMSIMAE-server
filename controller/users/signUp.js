@@ -6,7 +6,7 @@ const { user_category} = require('../../models');
 module.exports = async (req,res) => {
     
     const { email, password, name, phone, gender, age, location, favorite } = req.body
-    //일반회원가입 , 소셜회원가입
+    //User 테이블에 회원 생성
     const createUser = await User.create({
         email,
         password,
@@ -21,6 +21,7 @@ module.exports = async (req,res) => {
     })
 
     if(!createUser){
+        //DB에 생성 실패했을 때
         res.status(404).send('sign-up error')
     } else {
         favorite.map(async (name)=> {       
@@ -36,13 +37,13 @@ module.exports = async (req,res) => {
                             category_id : findcategory.dataValues.id 
                         })
                     } catch(err) {
-                        //console.log('2nd', err)
+                        throw err
                     }   
                 }
                 return findcategory;
                 
             } catch(err) {
-                //console.log(err)
+                throw err
             }        
         })
         res.status(201).send('회원가입이 완료되었습니다.')

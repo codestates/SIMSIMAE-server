@@ -1,5 +1,4 @@
 const express = require('express');
-//미들웨어
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -19,11 +18,6 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-
-//테스트용!!
-app.get('/', async (req, res) => {
-    res.send('Hello!!')
-})
 
 //라우터 연결
 app.use('/user', usersRouter)

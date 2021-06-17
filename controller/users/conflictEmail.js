@@ -3,6 +3,7 @@ const { User } = require('../../models');
 module.exports = async (req, res) => {
     const { email } = req.body
 
+    //User 테이블에 요청받는 email이 있는지 확인
     const checkEmail = await User.count({ 
         where: {email: email}
     })
