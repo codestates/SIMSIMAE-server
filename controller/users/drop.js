@@ -2,13 +2,13 @@ const { User } = require('../../models');
 
 
 module.exports = async (req,res) => {
-    const { email } = req.body
+    const { email, password } = req.body
     const dropUser = await User.findOne({ 
         where: { email: email },
-        attributes: ['id'] 
+        attributes: ['id', 'password' ] 
     })
    
-    if(!dropUser) {
+    if(dropUser.password !== password) {
         res.status(404).send('not matched password')
     } else {
         await User.update({ status : false }, { where : { id : dropUser.id  } })
