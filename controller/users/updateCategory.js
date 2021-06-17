@@ -4,40 +4,38 @@ const { user_category} = require('../../models');
 module.exports = async (req, res) => {
     const { userId, favorite } = req.body
 
-    // 유저의 기존 관심사 데이터를 모두 삭제 
-    // post 요청으로 새로 들어온 관심사 카테고리 데이터를 생성 
-
     if(!Array.isArray(favorite)){
+        //favorite이 안들어왔을 때
         res.status(400).send('올바른 요청이 아닙니다.')
     } else {
-
+        //user_category 테이블에서 해당 user 삭제 
         await user_category.destroy({ 
             where : { user_id : userId } 
         }) 
 
         favorite.map(async (name)=> {       
             try {
+                //Category 테이블에서 category_id 찾기 
                 const findcategory = await Category.findOne({  
                     where : { name : name } ,  attributes : ['id']
                 })
                 
                 if(findcategory) {
-                    console.log('find', findcategory.id);
                     try {
+                        //user_category 테이블에 관심사 추가 
                         const newFavorite = await user_category.create({
                             user_id : userId, 
                             category_id : findcategory.dataValues.id 
                        })
-                       console.log('user', newFavorite );
                     } catch(err) {
-                        //console.log('2nd', err)
+                        throw err
                     }
                     
                 }
                 return findcategory;
                 
             } catch(err) {
-                //console.log(err)
+                throw err
             }          
         })
         res.status(201).send( favorite )

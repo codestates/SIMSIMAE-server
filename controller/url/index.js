@@ -3,6 +3,5 @@ module.exports = {
     userUrl: require('./userUrl'),
     like: require('./like'),
     dislike: require('./dislike'),
-
 };
   
